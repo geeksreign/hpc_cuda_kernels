@@ -74,7 +74,7 @@ __global__ void transpose_cute(const T* A_ptr, T* B_ptr, int M, int N) {
 
 // 模板参数必须是编译时常量，CUDA 模板参数必须直接指定，不能用 name=value语法
 template<typename T, bool use_swizzle>
-int cute_transpose_kernel_launch(const T* A_ptr, T* B_ptr, int M, int N) {
+void cute_transpose_kernel_launch(const T* A_ptr, T* B_ptr, int M, int N) {
     using namespace cute;
 
     constexpr size_t BlockM = 32;
