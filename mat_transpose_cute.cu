@@ -135,9 +135,9 @@ auto verify(const thrust::host_vector<ValueType> &S, const thrust::host_vector<V
     }
 
     for (size_t i = 0; i < D.size(); ++i) {
-        size_t d_idx =  (i%n)*n + i/m;
+        size_t d_idx =  (i%n)*m + i/n;
         if (S[i] != D[d_idx]) {
-            std::cerr << "Error. S[" << i << "]: " << S[i] << ",   D[" << i << "]: " << D[i] << std::endl;
+            std::cerr << "Error. S[" << i << "]: " << S[i] << ",   D[" << d_idx << "]: " << D[d_idx] << std::endl;
             if (++errors >= kErrorLimit) {
                 std::cerr << "Aborting on " << kErrorLimit << "nth error." << std::endl;
                 return errors;
