@@ -6,7 +6,7 @@
 #include <thrust/host_vector.h>
 #include <thrust/device_vector.h>
 #include <cute/tensor.hpp>
-#include "timing.cuh"
+#include "timing.h"
 
 // 编译：/usr/local/cuda-12/bin/nvcc mat_transpose_cute.cu -O3 -arch=sm_75 -std=c++17 -Icutlass/include --expt-relaxed-constexpr -cudart shared --cudadevrt none -lcublasLt -lcublas -o trans.out
 #ifdef USE_DP
